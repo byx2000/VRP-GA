@@ -207,35 +207,3 @@ std::string Chrom::toString() const
 	}
 	return s;
 }
-
-/*void Chrom::print() const
-{
-	int iCar = 0;
-	cout << iCar + 1 << "号车：";
-	for (int i = 0; i < (int)gene.size(); ++i)
-	{
-		if (gene[i] == 0)
-		{
-			cout << "\t载重量：" << load[iCar] << "\t核载：" << carInfo[iCar].capacity << "\t路程：" << mileage[iCar] << endl;
-			iCar++;
-			cout << iCar + 1 << "号车：";
-		}
-		else
-		{
-			cout << gene[i] << " ";
-		}
-	}
-	cout << "\t载重量：" << load[iCar] << "\t核载：" << carInfo[iCar].capacity << "\t路程：" << mileage[iCar] << endl;
-
-	if (valid)
-	{
-		cout << "时间：" << time << "\t";
-		cout << "里程：" << length << "\t";
-		cout << "车辆数：" << cnt << "\t";
-	}
-	else
-	{
-		cout << "不合法";
-	}
-	cout << endl << endl;
-}*/

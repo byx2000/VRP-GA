@@ -2,6 +2,7 @@
 #include "Chrom.h"
 
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -10,6 +11,46 @@ VRP::VRP()
 	cNode = 0;
 	cCar = 0;
 	k1 = k2 = k3 = 1.0;
+}
+
+void VRP::readDataFromFile(const std::string& filename)
+{
+	//打开文件
+	ifstream fin(filename);
+	if (!fin)
+	{
+		throw string("Open file failed!") + filename;
+	}
+
+	nodeInfo.clear();
+	carInfo.clear();
+
+	//读入配送点数
+	fin >> cNode;
+
+	//读入原点
+	double x0, y0;
+	fin >> x0 >> y0;
+	nodeInfo.push_back(Node(0, x0, y0, 0.0));
+
+	//读入所有配送点
+	for (int i = 0; i < cNode; ++i)
+	{
+		double x, y, d;
+		fin >> x >> y >> d;
+		nodeInfo.push_back(Node(i + 1, x, y, d));
+	}
+
+	//读入车辆数
+	fin >> cCar;
+
+	//读入所有车辆
+	for (int i = 0; i < cCar; ++i)
+	{
+		double w;
+		fin >> w;
+		carInfo.push_back(Car(i, w));
+	}
 }
 
 void VRP::addNode(double x, double y, double demand)
@@ -50,7 +91,7 @@ std::string VRP::toString() const
 	return s;
 }
 
-Result VRP::solve()
+void VRP::solve(Result& res)
 {
 	//预处理所有点对的距离
 	dis = vector<vector<double>>(cNode + 1, vector<double>(cNode + 1, 0.0));
@@ -107,10 +148,6 @@ Result VRP::solve()
 	}
 	
 	//对染色体进行解码
-	Result res;
 	best.decode(res);
 	res.numGeneration = numGeneration;
-
-	//返回结果
-	return res;
 }

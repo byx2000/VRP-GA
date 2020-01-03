@@ -4,11 +4,20 @@
 #include "../Data/Car.h"
 #include "../Data/Result.h"
 
-class VRP;
-
 class Chrom
 {
 public:
+	friend class VRP;
+	Chrom(const VRP& vrp);
+	void update();
+	void mutation();
+	double fitness() const;
+	bool operator<(const Chrom& c) const;
+	Chrom& operator=(const Chrom& c);
+	void decode(Result& res) const;
+	std::string toString() const;
+
+private:
 	const std::vector<Node>& nodeInfo;
 	const std::vector<Car>& carInfo;
 	const std::vector<std::vector<double>>& dis;
@@ -19,14 +28,4 @@ public:
 	double time, length;
 	int cnt;
 	bool valid;
-
-	Chrom(const VRP& vrp);
-	void update();
-	void mutation();
-	double fitness() const;
-	bool operator<(const Chrom& c) const;
-	Chrom& operator=(const Chrom& c);
-	void decode(Result& res) const;
-	std::string toString() const;
-	//void print() const;
 };
