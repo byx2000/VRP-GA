@@ -20,11 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\RandomUtil.cpp" />
+    <ClCompile Include="src\Util\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\RandomUtil.h" />
-    <ClInclude Include="src\VRP.h" />
+    <ClInclude Include="src\Algo\VRP.h" />
+    <ClInclude Include="src\Util\Random.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -13,21 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Algo">
+      <UniqueIdentifier>{afc2582d-3e71-40df-a784-a7da89133ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Util">
+      <UniqueIdentifier>{ebe2ccb9-ad53-4e1e-88e9-340b44877588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Util">
+      <UniqueIdentifier>{9a5ce0dc-f3e2-4a64-ab7e-fcc4e0df4dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Algo">
+      <UniqueIdentifier>{ebcfb124-5abb-4694-972d-5fe1f0243df7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\RandomUtil.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="src\Util\Random.cpp">
+      <Filter>源文件\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\RandomUtil.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="src\Algo\VRP.h">
+      <Filter>头文件\Algo</Filter>
     </ClInclude>
-    <ClInclude Include="src\VRP.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="src\Util\Random.h">
+      <Filter>头文件\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

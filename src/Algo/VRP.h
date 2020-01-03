@@ -1,4 +1,4 @@
-#include "RandomUtil.h"
+#include "../Util/Random.h"
 
 #include <iostream>
 #include <algorithm>
