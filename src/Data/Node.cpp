@@ -24,7 +24,12 @@ std::string Node::toString() const
 	s += ", ";
 	s += to_string(y);
 	s += ") \t";
-	s += "demand: ";
-	s += to_string(demand);
+
+	if (id != 0)
+	{
+		s += "demand: ";
+		s += to_string(demand);
+	}
+	
 	return s;
 }

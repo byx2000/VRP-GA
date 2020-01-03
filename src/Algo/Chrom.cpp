@@ -173,9 +173,8 @@ Chrom& Chrom::operator=(const Chrom& c)
 	return *this;
 }
 
-Result Chrom::decode() const
+void Chrom::decode(Result& res) const
 {
-	Result res;
 	res.path.resize(carInfo.size());
 	res.load = w;
 	res.mileage = d;
@@ -192,8 +191,6 @@ Result Chrom::decode() const
 			res.path[iCar].push_back(gene[i]);
 		}
 	}
-
-	return res;
 }
 
 void Chrom::print() const

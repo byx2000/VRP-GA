@@ -22,6 +22,6 @@ struct Chrom
 	double fitness(double k1, double k2, double k3) const;
 	bool operator<(const Chrom& c) const;
 	Chrom& operator=(const Chrom& c);
-	Result decode() const;
+	void decode(Result& res) const;
 	void print() const;
 };

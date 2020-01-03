@@ -1,13 +1,8 @@
 #pragma once
 
-#include "../Util/Random.h"
 #include "../Data/Node.h"
 #include "../Data/Car.h"
 #include "../Data/Result.h"
-#include "Chrom.h"
-
-#include <iostream>
-#include <algorithm>
 
 class VRP
 {

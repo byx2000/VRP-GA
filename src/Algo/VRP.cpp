@@ -1,4 +1,7 @@
 #include "VRP.h"
+#include "Chrom.h"
+
+#include <algorithm>
 
 using namespace std;
 
@@ -66,11 +69,11 @@ Result VRP::solve()
 
 	//遗传算法
 	int cnt = 0;
-	int c = 0;
+	int numGeneration = 0;
 	Chrom best(nodeInfo, carInfo, dis);
 	while (1)
 	{
-		c++;
+		numGeneration++;
 		sort(chroms.begin(), chroms.end());
 		if (chroms[0] < best)
 		{
@@ -95,8 +98,10 @@ Result VRP::solve()
 		}
 	}
 	
-	Result res = best.decode();
-	res.numGeneration = c;
+	//对染色体进行解码
+	Result res;
+	best.decode(res);
+	res.numGeneration = numGeneration;
 
 	//返回结果
 	return res;

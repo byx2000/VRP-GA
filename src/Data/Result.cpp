@@ -13,14 +13,13 @@ std::string Result::toString() const
 
 	for (int i = 0; i < (int)path.size(); ++i)
 	{
-		s += "Car ";
-		s += to_string(i);
-
 		if (path[i].size() == 0)
 		{
-			s += ": unuse\n";
 			continue;
 		}
+
+		s += "Car ";
+		s += to_string(i);
 
 		s += ": 0->";
 		for (int j = 0; j < (int)path[i].size(); ++j)
