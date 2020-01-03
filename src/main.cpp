@@ -36,6 +36,7 @@ int main()
 
 	cout << vrp.toString() << endl;
 
+	vrp.setWeights(100, 1, 1);
 	Result res = vrp.solve();
 
 	cout << res.toString() << endl;

@@ -4,24 +4,29 @@
 #include "../Data/Car.h"
 #include "../Data/Result.h"
 
-struct Chrom
+class VRP;
+
+class Chrom
 {
+public:
 	const std::vector<Node>& nodeInfo;
 	const std::vector<Car>& carInfo;
 	const std::vector<std::vector<double>>& dis;
+	double k1, k2, k3;
 
 	std::vector<int> gene;
-	std::vector<double> d, w;
+	std::vector<double> mileage, load;
 	double time, length;
 	int cnt;
 	bool valid;
 
-	Chrom(const std::vector<Node>& nodeInfo, const std::vector<Car>& carInfo, const std::vector<std::vector<double>>& dis);
+	Chrom(const VRP& vrp);
 	void update();
 	void mutation();
-	double fitness(double k1, double k2, double k3) const;
+	double fitness() const;
 	bool operator<(const Chrom& c) const;
 	Chrom& operator=(const Chrom& c);
 	void decode(Result& res) const;
-	void print() const;
+	std::string toString() const;
+	//void print() const;
 };

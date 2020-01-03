@@ -9,6 +9,7 @@ VRP::VRP()
 {
 	cNode = 0;
 	cCar = 0;
+	k1 = k2 = k3 = 1.0;
 }
 
 void VRP::addNode(double x, double y, double demand)
@@ -21,6 +22,13 @@ void VRP::addCar(double capacity)
 {
 	carInfo.push_back(Car(cCar, capacity));
 	cCar++;
+}
+
+void VRP::setWeights(double k1, double k2, double k3)
+{
+	this->k1 = k1;
+	this->k2 = k2;
+	this->k3 = k3;
 }
 
 std::string VRP::toString() const
@@ -60,7 +68,7 @@ Result VRP::solve()
 	vector<Chrom> chroms;
 	while (chroms.size() < 1000)
 	{
-		Chrom c(nodeInfo, carInfo, dis);
+		Chrom c(*this);
 		if (c.valid)
 		{
 			chroms.push_back(c);
@@ -70,7 +78,7 @@ Result VRP::solve()
 	//ÒÅ´«Ëã·¨
 	int cnt = 0;
 	int numGeneration = 0;
-	Chrom best(nodeInfo, carInfo, dis);
+	Chrom best(*this);
 	while (1)
 	{
 		numGeneration++;
