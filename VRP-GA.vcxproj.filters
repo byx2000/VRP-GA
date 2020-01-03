@@ -25,6 +25,12 @@
     <Filter Include="源文件\Algo">
       <UniqueIdentifier>{ebcfb124-5abb-4694-972d-5fe1f0243df7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Data">
+      <UniqueIdentifier>{04b4c7a2-0960-4858-99c6-61831d6da36d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Data">
+      <UniqueIdentifier>{85396a81-40ac-4223-89c9-84d6f410c2ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -33,8 +39,11 @@
     <ClCompile Include="src\Util\Random.cpp">
       <Filter>源文件\Util</Filter>
     </ClCompile>
-    <ClCompile Include="src\Algo\Node.cpp">
-      <Filter>源文件\Algo</Filter>
+    <ClCompile Include="src\Data\Car.cpp">
+      <Filter>源文件\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Data\Node.cpp">
+      <Filter>源文件\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,8 +53,11 @@
     <ClInclude Include="src\Util\Random.h">
       <Filter>头文件\Util</Filter>
     </ClInclude>
-    <ClInclude Include="src\Algo\Node.h">
-      <Filter>头文件\Algo</Filter>
+    <ClInclude Include="src\Data\Car.h">
+      <Filter>头文件\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Data\Node.h">
+      <Filter>头文件\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

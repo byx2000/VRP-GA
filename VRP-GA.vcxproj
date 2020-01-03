@@ -19,13 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Algo\Node.cpp" />
+    <ClCompile Include="src\Data\Car.cpp" />
+    <ClCompile Include="src\Data\Node.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Util\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Algo\Node.h" />
     <ClInclude Include="src\Algo\VRP.h" />
+    <ClInclude Include="src\Data\Car.h" />
+    <ClInclude Include="src\Data\Node.h" />
     <ClInclude Include="src\Util\Random.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

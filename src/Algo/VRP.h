@@ -1,7 +1,8 @@
 #pragma once
 
 #include "../Util/Random.h"
-#include "Node.h"
+#include "../Data/Node.h"
+#include "../Data/Car.h"
 
 #include <iostream>
 #include <algorithm>
@@ -105,13 +106,6 @@ public:
 	}
 
 private:
-	struct Car
-	{
-		double capacity;
-		Car(double capacity = 0.0)
-			: capacity(capacity) {}
-	};
-
 	struct Chrom
 	{
 		VRP* pVRP;
