@@ -1,4 +1,7 @@
+#pragma once
+
 #include "../Util/Random.h"
+#include "Node.h"
 
 #include <iostream>
 #include <algorithm>
@@ -10,7 +13,7 @@ public:
 	{
 		cNode = 0;
 		cCar = 0;
-		nodeInfo.resize(1);
+		nodeInfo.push_back(Node(0.0, 0.0, 0.0));
 	}
 
 	void setDeparture(double x, double y)
@@ -102,14 +105,6 @@ public:
 	}
 
 private:
-	struct Node
-	{
-		double x, y;
-		double demand;
-		Node(double x = 0.0, double y = 0.0, double demand = 0.0)
-			: x(x), y(y), demand(demand) {}
-	};
-
 	struct Car
 	{
 		double capacity;

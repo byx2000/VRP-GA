@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Algo\Node.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Util\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Algo\Node.h" />
     <ClInclude Include="src\Algo\VRP.h" />
     <ClInclude Include="src\Util\Random.h" />
   </ItemGroup>

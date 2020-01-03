@@ -33,6 +33,9 @@
     <ClCompile Include="src\Util\Random.cpp">
       <Filter>源文件\Util</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algo\Node.cpp">
+      <Filter>源文件\Algo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algo\VRP.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="src\Util\Random.h">
       <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algo\Node.h">
+      <Filter>头文件\Algo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
