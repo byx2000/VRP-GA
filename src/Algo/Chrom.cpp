@@ -81,9 +81,7 @@ Chrom::Chrom(const VRP& vrp)
 		iCar++;
 	}
 
-	update();
-
-	print();*/
+	update();*/
 }
 
 void Chrom::update()

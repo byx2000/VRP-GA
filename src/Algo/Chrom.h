@@ -6,8 +6,8 @@
 
 class Chrom
 {
-public:
 	friend class VRP;
+public:
 	Chrom(const VRP& vrp);
 	void update();
 	void mutation();

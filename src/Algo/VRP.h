@@ -11,7 +11,7 @@ public:
 	VRP();
 	void readDataFromFile(const std::string& filename);
 	void addNode(double x, double y, double demand);
-	void addCar(double capacity);
+	void addCar(double capacity, double disLimit);
 	void setWeights(double k1, double k2, double k3);
 	std::string toString() const;
 	void solve(Result& res);

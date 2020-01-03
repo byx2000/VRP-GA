@@ -47,9 +47,9 @@ void VRP::readDataFromFile(const std::string& filename)
 	//读入所有车辆
 	for (int i = 0; i < cCar; ++i)
 	{
-		double w;
-		fin >> w;
-		carInfo.push_back(Car(i, w));
+		double w, d;
+		fin >> w >> d;
+		carInfo.push_back(Car(i, w, d));
 	}
 }
 
@@ -59,9 +59,9 @@ void VRP::addNode(double x, double y, double demand)
 	cNode++;
 }
 
-void VRP::addCar(double capacity)
+void VRP::addCar(double capacity, double disLimit)
 {
-	carInfo.push_back(Car(cCar, capacity));
+	carInfo.push_back(Car(cCar, capacity, disLimit));
 	cCar++;
 }
 

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Car::Car(int id, double capacity) : id(id), capacity(capacity)
+Car::Car(int id, double capacity, double disLimit) : id(id), capacity(capacity), disLimit(disLimit)
 {
 
 }
@@ -13,5 +13,7 @@ std::string Car::toString() const
 	s += to_string(id);
 	s += ":  \tcapacity: ";
 	s += to_string(capacity);
+	s += "\tdistance limit: ";
+	s += to_string(disLimit);
 	return s;
 }
