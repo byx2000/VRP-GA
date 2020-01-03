@@ -31,7 +31,7 @@ int main()
 	{
 		double w;
 		fin >> w;
-		vrp.addCar(w);
+		vrp.addCar(i, w);
 	}
 
 	Result res = vrp.solve();

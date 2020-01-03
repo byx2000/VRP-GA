@@ -20,9 +20,9 @@ void VRP::addNode(double x, double y, double demand)
 	cNode++;
 }
 
-void VRP::addCar(double capacity)
+void VRP::addCar(int id, double capacity)
 {
-	carInfo.push_back(Car(capacity));
+	carInfo.push_back(Car(id, capacity));
 	cCar++;
 }
 
