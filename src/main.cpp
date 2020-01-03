@@ -34,7 +34,7 @@ int main()
 		vrp.addCar(w);
 	}
 
-	VRP::Result res = vrp.solve();
+	Result res = vrp.solve();
 
 	double time = 0.0;
 	double sum = 0.0;

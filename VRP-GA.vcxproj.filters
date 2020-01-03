@@ -45,6 +45,12 @@
     <ClCompile Include="src\Data\Node.cpp">
       <Filter>源文件\Data</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algo\VRP.cpp">
+      <Filter>源文件\Algo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Data\Result.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algo\VRP.h">
@@ -58,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="src\Data\Node.h">
       <Filter>头文件\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Data\Result.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

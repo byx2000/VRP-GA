@@ -3,6 +3,7 @@
 #include "../Util/Random.h"
 #include "../Data/Node.h"
 #include "../Data/Car.h"
+#include "../Data/Result.h"
 
 #include <iostream>
 #include <algorithm>
@@ -10,100 +11,11 @@
 class VRP
 {
 public:
-	VRP()
-	{
-		cNode = 0;
-		cCar = 0;
-		nodeInfo.push_back(Node(0.0, 0.0, 0.0));
-	}
-
-	void setDeparture(double x, double y)
-	{
-		nodeInfo[0] = Node(x, y, 0.0);
-	}
-
-	void addNode(double x, double y, double demand)
-	{
-		nodeInfo.push_back(Node(x, y, demand));
-		cNode++;
-	}
-
-	void addCar(double capacity)
-	{
-		carInfo.push_back(Car(capacity));
-		cCar++;
-	}
-
-	struct Result
-	{
-		std::vector<std::vector<int>> path;
-		std::vector<double> load;
-		std::vector<double> mileage;
-	};
-
-	Result solve()
-	{
-		using namespace std;
-
-		//预处理所有点对的距离
-		dis = vector<vector<double>>(cNode + 1, vector<double>(cNode + 1, 0.0));
-		for (int i = 0; i <= cNode; ++i)
-		{
-			for (int j = 0; j <= cNode; ++j)
-			{
-				dis[i][j] =
-					sqrt((nodeInfo[i].x - nodeInfo[j].x) * (nodeInfo[i].x - nodeInfo[j].x)
-						+ (nodeInfo[i].y - nodeInfo[j].y) * (nodeInfo[i].y - nodeInfo[j].y));
-			}
-		}
-
-		//初始化种群
-		vector<Chrom> chroms;
-		while (chroms.size() < 1000)
-		{
-			Chrom c(this);
-			if (c.valid)
-			{
-				chroms.push_back(c);
-			}
-		}
-
-		//遗传算法
-		int cnt = 0;
-		int c = 0;
-		Chrom best(this);
-		while (1)
-		{
-			c++;
-			sort(chroms.begin(), chroms.end());
-			if (chroms[0] < best)
-			{
-				best = chroms[0];
-				cnt = 0;
-			}
-			else
-			{
-				cnt++;
-			}
-
-			if (cnt >= 1000)
-			{
-				break;
-			}
-
-			int cnt = chroms.size() / 2;
-			for (int i = cnt; i < (int)chroms.size(); ++i)
-			{
-				chroms[i] = chroms[i - cnt];
-				chroms[i].mutation();
-			}
-		}
-
-		cout << "进化代数：" << c << endl;
-
-		//返回结果
-		return best.decode();
-	}
+	VRP();
+	void setDeparture(double x, double y);
+	void addNode(double x, double y, double demand);
+	void addCar(double capacity);
+	Result solve();
 
 private:
 	struct Chrom
@@ -126,7 +38,7 @@ private:
 			{
 				gene.push_back(i + 1);
 			}
-			//Random::Shuffle(gene.begin(), gene.end());
+			
 			Random::Shuffle(gene);
 
 			int index = 0;
