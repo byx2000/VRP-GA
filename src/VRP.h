@@ -1,6 +1,7 @@
 #include "RandomUtil.h"
 
 #include <iostream>
+#include <algorithm>
 
 class VRP
 {
@@ -136,7 +137,8 @@ private:
 			{
 				gene.push_back(i + 1);
 			}
-			pVRP->rnd.shuffle(gene.begin(), gene.end());
+			//Random::Shuffle(gene.begin(), gene.end());
+			Random::Shuffle(gene);
 
 			int index = 0;
 			for (int i = 0; i < pVRP->cCar - 1; ++i)
@@ -215,8 +217,8 @@ private:
 		{
 			using namespace std;
 
-			int i = pVRP->rnd.uniformIntDist(0, gene.size() - 1);
-			int j = pVRP->rnd.uniformIntDist(0, gene.size() - 1);
+			int i = Random::UniformInt(0, gene.size() - 1);
+			int j = Random::UniformInt(0, gene.size() - 1);
 			swap(gene[i], gene[j]);
 			double t_time = time;
 			double t_length = length;
@@ -308,5 +310,4 @@ private:
 	std::vector<Node> nodeInfo;
 	std::vector<Car> carInfo;
 	std::vector<std::vector<double>> dis;
-	Random rnd;
 };
