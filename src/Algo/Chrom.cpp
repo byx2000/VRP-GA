@@ -9,17 +9,17 @@ using namespace std;
 Chrom::Chrom(const std::vector<Node>& nodeInfo, const std::vector<Car>& carInfo, const std::vector<std::vector<double>>& dis)
 	: nodeInfo(nodeInfo), carInfo(carInfo), dis(dis)
 {
-	int cNode = nodeInfo.size();
+	int cNode = nodeInfo.size() - 1;
 	int cCar = carInfo.size();
-
+	
 	d.resize(cCar, 0.0);
 	w.resize(cCar, 0.0);
-
+	
 	for (int i = 0; i < cNode; ++i)
 	{
 		gene.push_back(i + 1);
 	}
-
+	
 	Random::Shuffle(gene);
 
 	int index = 0;
@@ -42,8 +42,43 @@ Chrom::Chrom(const std::vector<Node>& nodeInfo, const std::vector<Car>& carInfo,
 
 		gene.insert(gene.begin() + index, 0);
 	}
+	
+	update();
+
+	/*vector<int> p(cNode);
+	for (int i = 0; i < cNode; ++i)
+	{
+		p[i] = i + 1;
+	}
+	Random::Shuffle(p);
+
+	int iCar = 0, iNode = 0;
+	double sum = 0.0;
+	while (iCar < cCar - 1 && iNode < cNode)
+	{
+		if (sum > carInfo[iCar].capacity)
+		{
+			gene.push_back(0);
+			iCar++;
+			sum = 0.0;
+		}
+		else
+		{
+			gene.push_back(p[iNode]);
+			sum += nodeInfo[p[iNode]].demand;
+		}
+		iNode++;
+	}
+
+	while (iCar < cCar - 1)
+	{
+		gene.push_back(0);
+		iCar++;
+	}
 
 	update();
+
+	print();*/
 }
 
 void Chrom::update()
@@ -124,6 +159,18 @@ bool Chrom::operator<(const Chrom& c) const
 {
 	double k1 = 100.0, k2 = 1.0, k3 = 1.0;
 	return fitness(k1, k2, k3) < c.fitness(k1, k2, k3);
+}
+
+Chrom& Chrom::operator=(const Chrom& c)
+{
+	gene = c.gene;
+	d = c.d;
+	w = c.w;
+	time = c.time;
+	length = c.length;
+	cnt = c.cnt;
+	valid = c.valid;
+	return *this;
 }
 
 Result Chrom::decode() const

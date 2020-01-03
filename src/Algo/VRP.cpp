@@ -44,7 +44,7 @@ Result VRP::solve()
 	vector<Chrom> chroms;
 	while (chroms.size() < 1000)
 	{
-		Chrom c(this);
+		Chrom c(nodeInfo, carInfo, dis);
 		if (c.valid)
 		{
 			chroms.push_back(c);
@@ -54,7 +54,7 @@ Result VRP::solve()
 	//ÒÅ´«Ëã·¨
 	int cnt = 0;
 	int c = 0;
-	Chrom best(this);
+	Chrom best(nodeInfo, carInfo, dis);
 	while (1)
 	{
 		c++;

@@ -9,6 +9,7 @@ struct Chrom
 	const std::vector<Node>& nodeInfo;
 	const std::vector<Car>& carInfo;
 	const std::vector<std::vector<double>>& dis;
+
 	std::vector<int> gene;
 	std::vector<double> d, w;
 	double time, length;
@@ -20,6 +21,7 @@ struct Chrom
 	void mutation();
 	double fitness(double k1, double k2, double k3) const;
 	bool operator<(const Chrom& c) const;
+	Chrom& operator=(const Chrom& c);
 	Result decode() const;
 	void print() const;
 };
