@@ -6,24 +6,37 @@ VRP::VRP()
 {
 	cNode = 0;
 	cCar = 0;
-	nodeInfo.push_back(Node(0.0, 0.0, 0.0));
-}
-
-void VRP::setDeparture(double x, double y)
-{
-	nodeInfo[0] = Node(x, y, 0.0);
 }
 
 void VRP::addNode(double x, double y, double demand)
 {
-	nodeInfo.push_back(Node(x, y, demand));
+	nodeInfo.push_back(Node(cNode, x, y, demand));
 	cNode++;
 }
 
-void VRP::addCar(int id, double capacity)
+void VRP::addCar(double capacity)
 {
-	carInfo.push_back(Car(id, capacity));
+	carInfo.push_back(Car(cCar, capacity));
 	cCar++;
+}
+
+std::string VRP::toString() const
+{
+	string s = "Node info:\n";
+	for (int i = 0; i < (int)nodeInfo.size(); ++i)
+	{
+		s += nodeInfo[i].toString();
+		s += "\n";
+	}
+
+	s += "\nCar info:\n";
+	for (int i = 0; i < (int)carInfo.size(); ++i)
+	{
+		s += carInfo[i].toString();
+		s += "\n";
+	}
+
+	return s;
 }
 
 Result VRP::solve()
@@ -81,9 +94,10 @@ Result VRP::solve()
 			chroms[i].mutation();
 		}
 	}
-
-	cout << "进化代数：" << c << endl;
+	
+	Result res = best.decode();
+	res.numGeneration = c;
 
 	//返回结果
-	return best.decode();
+	return res;
 }

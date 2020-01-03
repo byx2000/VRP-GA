@@ -13,9 +13,9 @@ class VRP
 {
 public:
 	VRP();
-	void setDeparture(double x, double y);
 	void addNode(double x, double y, double demand);
-	void addCar(int id, double capacity);
+	void addCar(double capacity);
+	std::string toString() const;
 	Result solve();
 
 private:

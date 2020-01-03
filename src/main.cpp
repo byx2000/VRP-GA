@@ -15,7 +15,7 @@ int main()
 
 	double x0, y0;
 	fin >> x0 >> y0;
-	vrp.setDeparture(x0, y0);
+	vrp.addNode(x0, y0, 0.0);
 
 	for (int i = 0; i < cNode; ++i)
 	{
@@ -31,12 +31,14 @@ int main()
 	{
 		double w;
 		fin >> w;
-		vrp.addCar(i, w);
+		vrp.addCar(w);
 	}
+
+	cout << vrp.toString() << endl;
 
 	Result res = vrp.solve();
 
-	double time = 0.0;
+	/*double time = 0.0;
 	double sum = 0.0;
 	int cnt = 0;
 	for (int i = 0; i < (int)res.path.size(); ++i)
@@ -59,7 +61,9 @@ int main()
 			cout << "未使用" << endl;
 		}
 	}
-	cout << "时间：" << time << " 总里程：" << sum << " 车辆数：" << cnt << endl;
+	cout << "时间：" << time << " 总里程：" << sum << " 车辆数：" << cnt << endl;*/
+
+	cout << res.toString() << endl;
 
 	return 0;
 }

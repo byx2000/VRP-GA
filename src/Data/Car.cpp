@@ -11,7 +11,7 @@ std::string Car::toString() const
 {
 	string s = "Car ";
 	s += to_string(id);
-	s += ": \tcapacity: ";
+	s += ":  \tcapacity: ";
 	s += to_string(capacity);
 	return s;
 }
