@@ -49,7 +49,10 @@
       <Filter>源文件\Algo</Filter>
     </ClCompile>
     <ClCompile Include="src\Data\Result.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algo\Chrom.cpp">
+      <Filter>源文件\Algo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +69,10 @@
       <Filter>头文件\Data</Filter>
     </ClInclude>
     <ClInclude Include="src\Data\Result.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algo\Chrom.h">
+      <Filter>头文件\Algo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
