@@ -31,6 +31,12 @@
     <Filter Include="源文件\Data">
       <UniqueIdentifier>{85396a81-40ac-4223-89c9-84d6f410c2ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Export">
+      <UniqueIdentifier>{134a8362-9a2c-43b6-832b-2b6da4443284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Export">
+      <UniqueIdentifier>{82d1b750-5924-4ccd-a020-1002c1909709}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -54,6 +60,9 @@
     <ClCompile Include="src\Algo\Chrom.cpp">
       <Filter>源文件\Algo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Export\Export.cpp">
+      <Filter>源文件\Export</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algo\VRP.h">
@@ -73,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="src\Algo\Chrom.h">
       <Filter>头文件\Algo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Export\Export.h">
+      <Filter>头文件\Export</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
