@@ -1,4 +1,4 @@
-<img src="\img\image-20191230102022829.png" alt="image-20191230102022829" style="zoom:80%;" />
+<img src=".\img\image-20191230102022829.png" alt="image-20191230102022829" style="zoom:80%;" />
 
 
 
